@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore.js"></script>
+    <title>Underscore objects</title>
+</head>
+<body>
+
+    <script>
+        var car = _.create(Car.prototype, {brandName: "Audi", model: "A7", productionYear:2011});
+        show(car);
+
+        var invertedCar = _.invert(car);
+        show(invertedCar);
+
+        var pickedCar = _.pick(car, 'brandName', 'productionYear');
+        show(pickedCar);
+
+        var omitedCar = _.omit(car, 'model');
+        show(omitedCar);
+        
+        //functions
+
+        function Car(brandName, model, productionYear){
+            this.brandName = brandName;
+            this.model = model;
+            this.productionYear = productionYear;
+        };
+
+        function show(data){
+            console.log(data);
+        };
+
+
+    </script>
+    
+    
+</body>
+</html>
